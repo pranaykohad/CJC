@@ -1,3 +1,3 @@
 export interface City {
-    cityList : string[];
+    city : string;
 }

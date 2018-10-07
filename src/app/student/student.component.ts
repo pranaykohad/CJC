@@ -1,18 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { Student } from '../model/student.model';
-import { StudentService } from '../service/student.service';
+import { country } from '../model/country.model';
+//import { CountryService } from '../service/country.service';
+
 
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
   styleUrls: ['./student.component.css']
 })
-export class StudentComponent {
+export class StudentComponent implements OnInit {
+  
+  public countryList : country[];
+  
+  ngOnInit(): void {
+      this._countryService.getCountryData().subscribe(data => {
 
-  public info: Student[];
-
-  constructor(private _studentService: StudentService) { 
-      this.info = _studentService.getStudentData();
+        this.countryList = data;
+      },
+        error => {
+          console.error('Error while getting Recent Notice data. Stack: ', error);
+        }
+      );
   }
+
+ 
+  
+
+
+  constructor(private _countryService : CountryService) {}
 
 }

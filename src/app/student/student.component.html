@@ -1,9 +1,32 @@
-<div>
+<div style="border: 2px solid black; border-radius: 10px">
   this is student.component.html
-  <div *ngFor='let s of info; let i = index'>
-      <div>{{i}}&nbsp;&nbsp;
-      {{s.name}}&nbsp;&nbsp;
-      {{s.age}}&nbsp;&nbsp;
-      {{s.rollno}}</div><br>
+  
+  <div *ngFor='let c_list of countryList; let i1 = index' class="country-backgorund">
+  
+        <div>&nbsp;&nbsp;
+        
+        <span class="country-name">{{i1+1}})&nbsp;{{c_list.country}}</span> 
+        
+        <div *ngFor='let s_list of c_list.states; let i2 = index'>
+
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              
+              <span class="state-name">{{i1+1}})&nbsp;{{s_list.state}}</span>
+
+              <div *ngFor='let ct_list of s_list.cities; let i3 = index'>
+              
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <span class="city-name">{{i3+1}})&nbsp;{{ct_list.city}}</span>
+
+                </div>
+
+              </div> 
+
+          </div>
+
+        </div>
+
+    </div>
+
   </div>
-</div>

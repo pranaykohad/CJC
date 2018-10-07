@@ -1,0 +1,21 @@
+.country-name{
+    font-size: 30px;
+    color: brown
+}
+
+.state-name{
+    font-size: 25px;
+    color: coral
+}
+
+.city-name{
+    font-size: 20px;
+    color: darkslateblue
+}
+
+.country-backgorund{
+    background-color: aquamarine;
+    padding-left: 40%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
